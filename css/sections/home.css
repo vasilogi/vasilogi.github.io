@@ -38,14 +38,15 @@
 }
 
 .home img {
-  width: 148px;
-  height: 148px;
+  width: 200px;
+  height: 200px;
   background-color: #e7e7ef;
   padding: 5px;
   margin-bottom: 10px;
 }
 
-.home .greeting, .home .greeting-subtitle {
+.home .greeting,
+.home .greeting-subtitle {
   color: #f9fafc;
 }
 
@@ -67,7 +68,7 @@
 
 .bounce {
   -webkit-animation: bounce 2s infinite;
-          animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 
 @-webkit-keyframes bounce {
