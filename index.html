@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.68.3" />
+	<meta name="generator" content="Hugo 0.92.2" />
     <title>vasilogi&#39;s Blog</title>
     
     
@@ -21,13 +21,17 @@
 <link rel="stylesheet" href="/css/layouts/main.css"/>
 <link rel="stylesheet" href="/css/navigators/navbar.css"/>
 <link rel="stylesheet" href="/css/plyr.css"/>
+
 <link rel="stylesheet" href="/css/flag-icon.min.css"/>
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600">
+<link rel="stylesheet" href="/google-fonts/Mulish/mulish.css"/>
 
 
 <link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+
+
+
 
 
 
@@ -54,6 +58,7 @@
     <link rel="stylesheet" href="/css/sections/recent-posts.css"/>
     <link rel="stylesheet" href="/css/sections/achievements.css"/>
     <link rel="stylesheet" href="/css/sections/accomplishments.css"/>
+    <link rel="stylesheet" href="/css/sections/publications.css"/>
 
     
     <link rel="stylesheet" href="/css/style.css"/>
@@ -112,7 +117,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="top-nav-items">
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
@@ -203,8 +208,9 @@
         
         
           <li class="nav-item">
-            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+            <a class="nav-link" id="blog-link" href="/posts/">Posts</a>
           </li>
+        
         
         
         
@@ -279,28 +285,27 @@
   <style>
      
     #homePageBackgroundImageDivStyled {
-        
-      background-image: url('https://vasilogi.github.io/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_500x0_resize_q75_box.jpg');
+      background-image: url('/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_500x0_resize_q75_box.jpg');
     }
      
     @media (min-width: 500px) and (max-width: 800px) {  
       #homePageBackgroundImageDivStyled {   
-          background-image: url('https://vasilogi.github.io/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_800x0_resize_q75_box.jpg');
+          background-image: url('/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_800x0_resize_q75_box.jpg');
         }
     }
     @media (min-width: 801px) and (max-width: 1200px) {  
       #homePageBackgroundImageDivStyled {   
-          background-image: url('https://vasilogi.github.io/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_1200x0_resize_q75_box.jpg');
+          background-image: url('/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_1200x0_resize_q75_box.jpg');
         }
     }
     @media (min-width: 1201px) and (max-width: 1500px) {  
       #homePageBackgroundImageDivStyled {   
-          background-image: url('https://vasilogi.github.io/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_1500x0_resize_q75_box.jpg');
+          background-image: url('/images/site/background_hu3ab57d723a4b77bc86677fda2947c3a3_1440999_1500x0_resize_q75_box.jpg');
         }
     }
     @media (min-width: 1501px) {  
       #homePageBackgroundImageDivStyled {   
-          background-image: url('https://vasilogi.github.io/images/site/background.jpg');
+          background-image: url('/images/site/background.jpg');
         }
     }
     </style>
@@ -310,7 +315,7 @@
     class="background container-fluid"
   ></div>
   <div class="container content text-center">
-    <img src="/images/author/Yannis__hu456da3be70e519d1519252d2dd56a63b_2861552_148x148_fit_box_2.png"
+    <img src="/images/author/Yannis__hu456da3be70e519d1519252d2dd56a63b_2861552_148x148_fit_box_3.png"
       class="rounded-circle mx-auto d-block img-fluid"
       alt="Author Image"
     />
@@ -337,7 +342,7 @@
         
           
         
-        <a href="#about" aria-label="Read More - Yannis Vasilopoulos"><i class="arrow bounce fa fa-chevron-down"></i></a>
+        <a href="#about" class="arrow-center" aria-label="Read More - Yannis Vasilopoulos"><i class="arrow bounce fa fa-chevron-down"></i></a>
       
     
   </div>
@@ -413,6 +418,7 @@
       <a href="/files/resume.pdf" title="My resume" target="#"
         ><button class="btn btn-dark">My resume</button></a
       >
+      
       
     </div>
     
@@ -592,7 +598,7 @@
             
           
         
-          <img class="card-img-xs" src="/images/sections/skills/python_hu267aa9799be385c9028f3c2885a6e8cd_52166_24x24_fit_box_2.png" alt="Python" />
+          <img class="card-img-xs" src="/images/sections/skills/python_hu267aa9799be385c9028f3c2885a6e8cd_52166_24x24_fit_box_3.png" alt="Python" />
           <h5 class="card-title">Python</h5>
         
       </div>
@@ -615,7 +621,7 @@
             
           
         
-          <img class="card-img-xs" src="/images/sections/skills/node-red_hu33f4ebe73dde9b205bf7929338182bc7_17643_24x24_fit_box_2.png" alt="Node-RED" />
+          <img class="card-img-xs" src="/images/sections/skills/node-red_hu33f4ebe73dde9b205bf7929338182bc7_17643_24x24_fit_box_3.png" alt="Node-RED" />
           <h5 class="card-title">Node-RED</h5>
         
       </div>
@@ -638,7 +644,7 @@
             
           
         
-          <img class="card-img-xs" src="/images/sections/skills/mendix_hud2daf67250a5c91448b8cfab09132525_4487_24x24_fit_box_2.png" alt="Mendix" />
+          <img class="card-img-xs" src="/images/sections/skills/mendix_hud2daf67250a5c91448b8cfab09132525_4487_24x24_fit_box_3.png" alt="Mendix" />
           <h5 class="card-title">Mendix</h5>
         
       </div>
@@ -661,7 +667,7 @@
             
           
         
-          <img class="card-img-xs" src="/images/sections/skills/anaconda_hu95e7b161dee7173561e386f9042b1cf1_24331_24x24_fit_box_2.png" alt="Anaconda" />
+          <img class="card-img-xs" src="/images/sections/skills/anaconda_hu95e7b161dee7173561e386f9042b1cf1_24331_24x24_fit_box_3.png" alt="Anaconda" />
           <h5 class="card-title">Anaconda</h5>
         
       </div>
@@ -684,7 +690,7 @@
             
           
         
-          <img class="card-img-xs" src="/images/sections/skills/docker_hue3b10d4dba5bd73823805b0be2eb9ab0_50112_24x24_fit_box_2.png" alt="Docker" />
+          <img class="card-img-xs" src="/images/sections/skills/docker_hue3b10d4dba5bd73823805b0be2eb9ab0_50112_24x24_fit_box_3.png" alt="Docker" />
           <h5 class="card-title">Docker</h5>
         
       </div>
@@ -967,13 +973,16 @@
         <span id="education"></span>Education</h1>
   
 
-    <div class="container">
-        <table class="education-info-table">
-            <tbody>
-                
-                <tr>
-                    <td class="icon">
-                        <div class="hline"></div>
+  <div class="container">
+    <table class="education-info-table">
+        <tbody>
+            
+            
+            <tr>
+                <td class="icon">
+                    
+                    <div class="hline"></div>
+                    
                         <div class="icon-holder">
                             <i class="fas fa-microscope"></i>
                         </div>
@@ -1019,9 +1028,11 @@
                     </td>
                 </tr>
                 
-                <tr>
-                    <td class="icon">
-                        <div class="hline"></div>
+            <tr>
+                <td class="icon">
+                    
+                    <div class="hline"></div>
+                    
                         <div class="icon-holder">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
@@ -1065,9 +1076,11 @@
                     </td>
                 </tr>
                 
-                <tr>
-                    <td class="icon">
-                        <div class="hline"></div>
+            <tr>
+                <td class="icon">
+                    
+                    <div class="hline"></div>
+                    
                         <div class="icon-holder">
                             <i class="fas fa-university"></i>
                         </div>
@@ -1123,19 +1136,19 @@
   <div class="container ml-auto text-center">
     <div class="btn-group flex-wrap" role="group" id="project-filter-buttons">
       
-      <button type="button" class="btn btn-dark" data-filter="all">
+      <button type="button" class="btn btn-dark project-filtr-control" data-filter="all">
         All
       </button>
       
-      <button type="button" class="btn btn-dark" data-filter="professional">
+      <button type="button" class="btn btn-dark project-filtr-control" data-filter="professional">
         Professional
       </button>
       
-      <button type="button" class="btn btn-dark" data-filter="academic">
+      <button type="button" class="btn btn-dark project-filtr-control" data-filter="academic">
         Academic
       </button>
       
-      <button type="button" class="btn btn-dark" data-filter="hobby">
+      <button type="button" class="btn btn-dark project-filtr-control" data-filter="hobby">
         Hobby
       </button>
       
@@ -1162,7 +1175,7 @@
               
             
 
-            <img class="card-img-xs" src="/images/sections/projects/industrial-edge_hu399092fb55bafc68c7efe98dc6bfb06a_4433_24x24_fit_box_2.png" alt="Industrial Edge" />
+            <img class="card-img-xs" src="/images/sections/projects/industrial-edge_hu399092fb55bafc68c7efe98dc6bfb06a_4433_24x24_fit_box_3.png" alt="Industrial Edge" />
             
             
             <h5 class="card-title mb-0">Industrial Edge</h5>
@@ -1458,7 +1471,7 @@ My mentee is Maria, a student at the Bioinformatics department of UCT Prague. To
       <div class="card-body">
         <h5 class="card-title">Name Di-confusion</h5>
         <p class="card-text post-summary"> This is my first post and instead of a proper introduction, I would like to clarify my name&rsquo;s situation. I intend do that bacause many non-Greek friends and colleagues get confused since my name is different on official documents than how I normally write it.
-The situation Formal and informal I&rsquo;m baptised in a Greek Orthodox Christian church (not my choice 😄) as Ιωάννης which directly translates to English as Ioannis.</p>
+The situation Formal and informal I&rsquo;m baptised in a Greek Orthodox Christian church (not my choice 😁) as Ιωάννης which directly translates to English as Ioannis.</p>
       </div>
       <div class="card-footer">
         <span class="float-left">March 18, 2022</span>
@@ -1469,33 +1482,9 @@ The situation Formal and informal I&rsquo;m baptised in a Greek Orthodox Christi
 </div>
 
       
-        <div class="col-lg-4 col-md-6 pt-2 post-card">
-  <a href="/search/" title="অনুসন্ধানের ফলাফল" class="post-card-link">
-    <div class="card">
-      <div class="card-head">
-        <img class="card-img-top" src='/images/default-hero.jpg'
-          alt="Card image cap"
-        />
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">অনুসন্ধানের ফলাফল</h5>
-        <p class="card-text post-summary"> This file exists solely to respond to /search URL with the related search layout template.
-No content shown here is rendered, all content is based in the template layouts/page/search.html
-Setting a very low sitemap priority will tell search engines this is not important content.
-This implementation uses Fusejs, jquery and mark.js
-Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```</p>
-      </div>
-      <div class="card-footer">
-        <span class="float-left">June 8, 2010</span>
-        <a href="/search/" title="Read" class="float-right btn btn-outline-info btn-sm">Read</a>
-      </div>
-    </div>
-  </a>
-</div>
-
-      
     </div>
   </div>
+  
 </div>
 
           </div>
@@ -1663,8 +1652,8 @@ Initial setup Search depends on additional output content type of JSON in config
     <div class="container">
       <div class="row text-left">
         <div class="col-md-4">
-          <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank" rel="noopener">
-            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png" alt="Toha Theme Logo">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png" alt="Toha Theme Logo">
             Toha
           </a>
         </div>
@@ -1691,6 +1680,7 @@ Initial setup Search depends on additional output content type of JSON in config
 <script type="text/javascript" src="/js/navbar.js"></script>
 <script type="text/javascript" src="/js/plyr.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+
 
 
     
