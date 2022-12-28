@@ -6,7 +6,16 @@
     <description>Recent content on vasilogi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Apr 2022 22:00:25 +0100</lastBuildDate><atom:link href="https://vasilogi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+    <lastBuildDate>Mon, 26 Dec 2022 18:55:28 +0100</lastBuildDate><atom:link href="https://vasilogi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>High Performance Computing: Molecular Dynamics</title>
+      <link>https://vasilogi.github.io/posts/academic/molecular_dynamics/</link>
+      <pubDate>Mon, 26 Dec 2022 18:55:28 +0100</pubDate>
+      
+      <guid>https://vasilogi.github.io/posts/academic/molecular_dynamics/</guid>
+      <description>Abstract In drug manufacturing, solvent-based methods are used for the crystallization of active pharmaceutical ingredients (APIs). Often, the solvent interacts with the API resulting in the formation of a new solid compound, the solvate. When desolvation occurs upon heating, it might result in the formation of new solid forms with significantly different physicochemical properties. Therefore, in this work, we studied the desolvation kinetics by combining in situ powder X-ray diffraction (PXRD), all-atom molecular dynamics (MD) simulations, and macroscopic solid-state reaction kinetics modeling.</description>
+    </item>
+    
+    <item>
       <title>Mentoring Program</title>
       <link>https://vasilogi.github.io/posts/professional/uct_mentoring/</link>
       <pubDate>Mon, 25 Apr 2022 22:00:25 +0100</pubDate>
