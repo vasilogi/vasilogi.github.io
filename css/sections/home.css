@@ -43,15 +43,14 @@
 }
 
 .home img {
-  width: 200px;
-  height: 200px;
+  width: 148px;
+  height: 148px;
   background-color: #e7e7ef;
   padding: 5px;
   margin-bottom: 10px;
 }
 
-.home .greeting,
-.home .greeting-subtitle {
+.home .greeting, .home .greeting-subtitle {
   color: #f9fafc;
 }
 
@@ -72,28 +71,7 @@
 }
 
 .bounce {
-<<<<<<< HEAD
   animation: bounce 2s infinite;
-=======
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-}
-
-@-webkit-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
->>>>>>> 1cc73d1 (toha pull resolution)
 }
 
 @keyframes bounce {
