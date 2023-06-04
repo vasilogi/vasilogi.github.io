@@ -12,7 +12,8 @@
       <pubDate>Sun, 04 Jun 2023 14:27:35 +0200</pubDate>
       
       <guid>https://vasilogi.github.io/posts/professional/hugo_toha_cicd/</guid>
-      <description>Why CI/CD for my profile website ? Firstly, I need to explain how this project looked like in early development stages, which motivated me to delve deeper into GitHub actions and automate the deployment of this website.</description>
+      <description>Why CI/CD for this project? Firstly, I need to explain how this project looked like in early development stages, which motivated me to delve deeper into GitHub actions and automate the deployment of this website.
+The cause 🐌 For the development and hosting of this website that you have visited, I use two separate repositories. One repository is private, and I use it for the development and storing of my Hugo project.</description>
     </item>
     
     <item>
