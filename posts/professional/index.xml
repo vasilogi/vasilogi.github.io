@@ -6,7 +6,16 @@
     <description>Recent content in Professional Category on vasilogi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Apr 2022 22:00:25 +0100</lastBuildDate><atom:link href="https://vasilogi.github.io/posts/professional/index.xml" rel="self" type="application/rss+xml" /><item>
+    <lastBuildDate>Sun, 04 Jun 2023 14:27:35 +0200</lastBuildDate><atom:link href="https://vasilogi.github.io/posts/professional/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>GitHubs actions for my Hugo website</title>
+      <link>https://vasilogi.github.io/posts/professional/hugo_toha_cicd/</link>
+      <pubDate>Sun, 04 Jun 2023 14:27:35 +0200</pubDate>
+      
+      <guid>https://vasilogi.github.io/posts/professional/hugo_toha_cicd/</guid>
+      <description>Why CI/CD for my profile website ? This is a test text.</description>
+    </item>
+    
+    <item>
       <title>Mentoring Program</title>
       <link>https://vasilogi.github.io/posts/professional/uct_mentoring/</link>
       <pubDate>Mon, 25 Apr 2022 22:00:25 +0100</pubDate>
