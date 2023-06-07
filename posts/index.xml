@@ -13,7 +13,7 @@
       
       <guid>https://vasilogi.github.io/posts/professional/hugo_toha_cicd/</guid>
       <description>The rationale behind implementing CI/CD for this project Initially, it&amp;rsquo;s important to elucidate what the early stages of this project looked like, as this significantly influenced my decision to explore GitHub Actions more thoroughly and ultimately automate the deployment of this website.
-The triggering factor 🐌 The development and hosting of this website, which you&amp;rsquo;re currently visiting, involve two distinct repositories. The first repository, maintained as private, is dedicated to the development and storage of my Hugo project.</description>
+The development and hosting of this website, which you&amp;rsquo;re currently visiting, involve two distinct repositories. The first repository, maintained as private, is dedicated to the development and storage of my Hugo project.</description>
     </item>
     
     <item>
