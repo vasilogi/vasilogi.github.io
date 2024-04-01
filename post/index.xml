@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Ataraxia</title>
+    <link>http://localhost/post/</link>
+    <description>Recent content in Posts on Ataraxia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2024, Ioannis Vasilopoulos</copyright>
+    <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Name di-confusion</title>
+      <link>http://localhost/post/name-diconfussion/</link>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost/post/name-diconfussion/</guid>
+      <description>This is my first post and instead of a proper introduction, I would like to clarify my name&amp;rsquo;s situation. I intend do that bacause many non-Greek friends and colleagues get confused since my name is different on official documents than how I normally write it.&#xA;The situation Formal and informal My ID name is Ιωάννης which directly translates to English as Ioannis. However, in common Greek &amp;ldquo;Ioannis&amp;rdquo; this name in Greek sounds too formal and thus its diminutive form, Γιάννης, is preferred.</description>
+    </item>
+  </channel>
+</rss>
