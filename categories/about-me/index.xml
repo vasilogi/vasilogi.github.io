@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About Me on Ataraxia</title>
-    <link>https://vasilogi.hithub.io/categories/about-me/</link>
+    <link>https://vasilogi.github.io/categories/about-me/</link>
     <description>Recent content in About Me on Ataraxia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2024, Ioannis Vasilopoulos</copyright>
     <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://vasilogi.hithub.io/categories/about-me/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vasilogi.github.io/categories/about-me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Name di-confusion</title>
-      <link>https://vasilogi.hithub.io/post/name-diconfussion/</link>
+      <title>whoami: Ioannis, Giannis, or Yannis? 🇬🇷 issues.</title>
+      <link>https://vasilogi.github.io/post/whoami/</link>
       <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://vasilogi.hithub.io/post/name-diconfussion/</guid>
-      <description>This is my first post and instead of a proper introduction, I would like to clarify my name&amp;rsquo;s situation. I intend do that bacause many non-Greek friends and colleagues get confused since my name is different on official documents than how I normally write it.&#xA;The situation Formal and informal My ID name is Ιωάννης which directly translates to English as Ioannis. However, in common Greek &amp;ldquo;Ioannis&amp;rdquo; this name in Greek sounds too formal and thus its diminutive form, Γιάννης, is preferred.</description>
+      <guid>https://vasilogi.github.io/post/whoami/</guid>
+      <description>If you are reading this, chances are you&amp;rsquo;re one of my colleagues. Hello there 🤗&#xA;Perhaps you&amp;rsquo;ve might have noticed me sending private messages as Giannis, or Yannis. However, in official documents and professional settings, my name is listed as &amp;ldquo;Ioannis&amp;rdquo; 🤔&#xA;Unfortunately, I don&amp;rsquo;t possess multiple identities 😄 My name is officially Ιωάννης, which directly translates to English as Ioannis. However, this sounds too formal in common Greek, and thus its diminutive form, Γιάννης, is preferred.</description>
     </item>
   </channel>
 </rss>
