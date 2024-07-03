@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ataraxia</title>
-    <link>https://vasilogi.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Ataraxia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2024, Ioannis Vasilopoulos</copyright>
     <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://vasilogi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://vasilogi.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://vasilogi.github.io/about/</guid>
-      <description>About Hi there 👋 I&amp;rsquo;m Ioannis (Yannis) Vasilopoulos. I currently live in Prague and work as a Machine Learning Engineer at Siemens.&#xA;In my last role, Ι primarily focus on software development and machine learning engineering, adheering to MLOps principles.&#xA;Contact You can reach me by email at iovannis@outlook.com and also connect with me on LinkedIn.</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>About Hi there 👋 I&amp;rsquo;m Ioannis (Yannis) Vasilopoulos. I currently live in Prague and work as an AI Solutions Engineer at Siemens.&#xA;Projects Industrial Edge Playground: A scalable platform to create on-demand environments for customers to try out Industrial Edge products. IoT Dashboard with Docker: Store and monitor temperature and humidity data using container services. Pharmaceutical Drying Web Application: A web application for modeling and visualization of the pharmaceutical drying process (not supported).</description>
     </item>
     <item>
       <title>whoami: Ioannis, Giannis, or Yannis? 🇬🇷 issues.</title>
-      <link>https://vasilogi.github.io/post/whoami/</link>
+      <link>http://localhost:1313/post/whoami/</link>
       <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://vasilogi.github.io/post/whoami/</guid>
+      <guid>http://localhost:1313/post/whoami/</guid>
       <description>If you are reading this, chances are you&amp;rsquo;re one of my colleagues. Hello there 🤗&#xA;Perhaps you&amp;rsquo;ve might have noticed me sending private messages as Giannis, or Yannis. However, in official documents and professional settings, my name is listed as &amp;ldquo;Ioannis&amp;rdquo; 🤔&#xA;Unfortunately, I don&amp;rsquo;t possess multiple identities 😄 My name is officially Ιωάννης, which directly translates to English as Ioannis. However, this sounds too formal in common Greek, and thus its diminutive form, Γιάννης, is preferred.</description>
     </item>
   </channel>
