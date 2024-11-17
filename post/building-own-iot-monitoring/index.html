@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Ataraxia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-SKJNMNQZ5R"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SKJNMNQZ5R');
+        }
+      </script>
+    
+  
+
+
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/profile.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+        
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Ioannis Vasilopoulos
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    AI Solutions Engineer | SIEMENS
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../about/" title="About">About</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../post/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="http://github.com/vasilogi" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/vasilogi/" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="mailto:iovannis@outlook.com" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            <h3 class="mb-0">Building Your Own Iot Monitoring Solution</h3>
+            
+            <small class="text-muted">Published April 13, 2024</small>
+        </div>
+
+        <article>
+            <h2 id="-introduction">📝 Introduction</h2>
+<p>The Internet of Things (IoT) market is rapidly expanding, with revenues expected to reach $947.50 billion in 2024 worldwide and projected to grow to $1,560.00 billion by 2029, according to <a href="https://www.statista.com/outlook/tmo/internet-of-things/worldwide">Statista</a>. This growth spans across consumer, industrial, automotive, smart cities, and smart finance sectors, with automotive IoT leading the way.</p>
+<p>In the IoT ecosystem, monitoring and dash-boarding are crucial for real-time data visualization, anomaly detection, and proactive maintenance. While numerous commercial solutions exist, building your own monitoring system can offer unique advantages in flexibility, cost-effectiveness, and data privacy.</p>
+<p>In this post, I’ll share an open-source solution for IoT monitoring that combines affordable hardware with powerful open-source software to create a robust system. I’ll explain the value of this solution in the context of modern open-source and commercial technology.</p>
+<h2 id="-the-solution-at-a-glance">🔎 The Solution at a Glance</h2>
+<p>As everyone liking DIY stuff, I just wanted to use Docker containers for analysing my bedroom&rsquo;s temperature and humidity 😜. Therefore, I spent a couple of nights crafting firmware, connecting hardware pieces together and learning more on the capabilities of microcontrollers, data communication and time-series databases.</p>
+<h3 id="-end-to-end-data-flow">🔄 End to End Data Flow</h3>
+<p>Our solution uses an ESP32 microcontroller connected to a DHT11 temperature and humidity sensor. The ESP32 runs a MicroPython-based MQTT client that processes sensor data, timestamps it, converts it to JSON format, and transmits it over Wi-Fi using the MQTT protocol.
+The backend, which can run on a separate device (e.g., Raspberry Pi, cloud instance, or PC), consists of:</p>
+<ol>
+<li>An MQTT broker (Mosquitto) that receives and forwards sensor data</li>
+<li>Telegraf, which collects data from MQTT and stores it in InfluxDB</li>
+<li>InfluxDB, a time-series database optimised for high-performance reads and writes</li>
+<li>Grafana, a visualisation platform for creating customisable real-time dashboards</li>
+</ol>
+<p><img src="images/data_flow.svg" alt="data_flow"></p>
+<h3 id="-use-cases">🎯 Use-Cases</h3>
+<p>This setup, with small modifications, can be used for various IoT scenarios and beyond, including the monitoring of home environments, servers and infrastructure, home networking monitoring, and more.</p>
+<p><img src="images/various-use-cases.svg" alt="usecases"></p>
+<p>Regarding IoT, the solution showcased in the <a href="https://github.com/vasilogi/iot-dashboard-mqtt-telegraf-influxdb-grafana">repository</a> can be used off the shelf for temperature and humidity monitoring. However, a more comprehensive environment monitoring can be achieved by adding more sensors like air quality sensors, e.g. the CCS811 sensor that can detect a wide range of VOCs and provide equivalent CO2 (eCO2) readings or the Nova SDS011 which is a very effective particulate sensor that can measure PM2.5 and PM10 concentrations with high precision. A good versatile solution to monitor many environmental variables simultaneously is the BME680 that measures gas, pressure, humidity, and temperature as well as it can detect a broad range of volatile organic compounds (VOCs) in the air, making it useful for indoor air quality monitoring. Furthermore, the <a href="https://github.com/vasilogi/iot-dashboard-mqtt-telegraf-influxdb-grafana">codebase</a> is modular and abstracted, allowing developers to easily add more sensors by configuring new MQTT topics and InfluxDB measurements.the demonstrated system&rsquo;s flexibility allows for an easy integration of various sensors:</p>
+<ul>
+<li>Motion sensors (PIR, ultrasonic)</li>
+<li>Air quality sensors (CO2, VOC, particulate matter)</li>
+<li>Light sensors</li>
+<li>Soil moisture sensors</li>
+<li>Current and voltage sensors</li>
+</ul>
+<p><img src="images/extend-solution.svg" alt="extend_solution"></p>
+<h2 id="-why-build-your-own-solution">🤔 Why Build Your Own Solution?</h2>
+<p>Building your own IoT monitoring solution offers a unique set of advantages that can make it an attractive option for many users, particularly those with a technical background or a desire to learn more about IoT architecture.</p>
+<p><strong>Cost-effectiveness</strong> is a significant benefit of this approach. Most of the hardware components are quite cheap to purchase. There’s an initial investment in components like the ESP32 (approximately $10) and sensors such as the DHT11 (around $3), but these are one-time costs. Unlike commercial solutions that often involve recurring subscription fees, a self-built system can be scaled at minimal additional cost, making it an economical choice in the long run. Perhaps one of the most compelling reasons to build your own solution is the <strong>complete control</strong> it offers. You have full ownership of your data and can customize the system to meet your specific needs. This flexibility allows you to adapt the solution as your requirements evolve, without being constrained by the limitations of a commercial product or facing vendor lock-in.
+<strong>Privacy and data security</strong> are increasingly important considerations in our interconnected world. By keeping your data within your own network and eliminating dependencies on third-party cloud services, you can ensure compliance with data protection regulations and maintain a higher level of privacy. This can be particularly crucial for sensitive applications or in regions with strict data governance laws. Beyond the practical benefits, building your own IoT monitoring system presents an <strong>excellent learning opportunity</strong>. It allows you to gain a deep understanding of IoT architecture, hands-on experience with modern monitoring tools, and develop valuable technical skills that are increasingly in demand in today’s job market.</p>
+<p>However, it’s important to acknowledge that this approach isn’t without its challenges. It requires a certain level of <strong>technical knowledge</strong>, including basic software engineering skills, understanding of networking concepts, and Linux system administration. You’ll also be <strong>responsible for maintaining the system</strong>, applying updates, and troubleshooting any issues that arise. Additionally, while the system starts with basic functionality, more advanced features may require custom development.</p>
+<p>Despite these considerations, for those with the technical inclination or the willingness to learn, building your own IoT monitoring solution can be a rewarding endeavor. It offers a perfect balance of cost, control, and educational value, making it an attractive option for a wide range of IoT applications.</p>
+<p><img src="images/pros-n-cons.svg" alt="pros_n_cons"></p>
+<h2 id="alternative-solutions">Alternative Solutions</h2>
+<p>While building your own IoT monitoring solution offers unique advantages, it’s important to consider other options that might better suit your specific needs or technical expertise. The IoT landscape offers a range of alternatives, from robust open-source platforms to comprehensive commercial solutions.</p>
+<p>Open-source alternatives like <a href="https://www.home-assistant.io/">Home Assistant</a> and <a href="https://thingsboard.io/">ThingsBoard</a> provide powerful, community-driven platforms with extensive features and integrations</p>
+<p>On the commercial side, enterprise-grade solutions such as AWS IoT Core and Azure IoT Hub offer scalable, fully-managed services with advanced features like device management, security, and analytics. While these come with associated costs, they can be ideal for businesses requiring high reliability, extensive support, and seamless integration with other cloud services.</p>
+<p>Each alternative has its own strengths and trade-offs in terms of cost, ease of use, scalability, and feature set.</p>
+<h2 id="-code">💻 Code</h2>
+<p>The complete source code and setup instructions for this project are available on my <a href="https://github.com/vasilogi/iot-dashboard-mqtt-telegraf-influxdb-grafana">GitHub repository</a> 🚀.</p>
+
+        </article>
+    </div>
+
+    
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; 2024, Ioannis Vasilopoulos
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>
