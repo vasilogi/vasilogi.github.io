@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on Ataraxia</title>
+    <link>http://localhost:1313/categories/software/</link>
+    <description>Recent content in Software on Ataraxia</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2024, Ioannis Vasilopoulos</copyright>
+    <lastBuildDate>Sat, 13 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Your Own Iot Monitoring Solution</title>
+      <link>http://localhost:1313/post/building-own-iot-monitoring/</link>
+      <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/building-own-iot-monitoring/</guid>
+      <description>📝 Introduction The Internet of Things (IoT) market is rapidly expanding, with revenues expected to reach $947.50 billion in 2024 worldwide and projected to grow to $1,560.00 billion by 2029, according to Statista. This growth spans across consumer, industrial, automotive, smart cities, and smart finance sectors, with automotive IoT leading the way.&#xA;In the IoT ecosystem, monitoring and dash-boarding are crucial for real-time data visualization, anomaly detection, and proactive maintenance. While numerous commercial solutions exist, building your own monitoring system can offer unique advantages in flexibility, cost-effectiveness, and data privacy.</description>
+    </item>
+  </channel>
+</rss>
