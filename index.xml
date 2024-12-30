@@ -7,12 +7,12 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2024, Ioannis Vasilopoulos</copyright>
-    <lastBuildDate>Sun, 29 Dec 2024 16:47:07 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vasilogi.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing Ollama on Windows and Setting Up Open WebUI</title>
       <link>https://vasilogi.github.io/post/llama-openwebui-on-windows/</link>
-      <pubDate>Sun, 29 Dec 2024 16:47:07 +0200</pubDate>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://vasilogi.github.io/post/llama-openwebui-on-windows/</guid>
       <description>This article demonstrates how to install Ollama and Open WebUI on your local machine to self-host and interact with Generative AI models.&#xA;For optimal performance, it&amp;rsquo;s recommended to install Ollama natively on your machine. Download the installer from the official website and follow the installation instructions. Once installed, launch Ollama and let it run in the background. Ollama provides a Command Line Interface (CLI) that enables you to manage compatible models, including pulling/pushing from a registry, viewing installed models, and creating new ones.</description>
     </item>
