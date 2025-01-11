@@ -1,0 +1,49 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import EssayPreview from '../../components/EssayPreview.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+
+export async function getStaticPaths() {
+    const essays = (await getCollection('essays')).sort(sortItemsByDateDesc);
+    const essayCount = essays.length;
+    return essays.map((essay, index) => ({
+        params: { id: essay.id },
+        props: {
+            essay,
+            prevEssay: index + 1 !== essayCount ? essays[index + 1] : null,
+            nextEssay: index !== 0 ? essays[index - 1] : null
+        }
+    }));
+}
+
+type Props = { essay: CollectionEntry<'essays'>; prevEssay: CollectionEntry<'essays'>; nextEssay: CollectionEntry<'essays'> };
+
+const { essay, prevEssay, nextEssay } = Astro.props;
+const { title, publishDate, description, seo } = essay.data;
+const { Content } = await render(essay);
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
+    <article class="mb-16 sm:mb-24">
+        <header class="mb-8">
+            <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+            <div class="mt-4 text-sm">
+                <FormattedDate date={publishDate} />
+            </div>
+        </header>
+        <div class="max-w-none prose prose-dante sm:prose-lg">
+            <Content />
+        </div>
+    </article>
+    {
+        (prevEssay || nextEssay) && (
+            <div class="my-16 sm:my-24">
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Read Next</h2>
+                {nextEssay && <EssayPreview essay={nextEssay} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {prevEssay && <EssayPreview essay={prevEssay} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            </div>
+        )
+    }
+</BaseLayout>

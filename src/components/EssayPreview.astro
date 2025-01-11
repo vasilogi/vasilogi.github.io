@@ -1,0 +1,28 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import ArrowRight from '../icons/ArrowRight.astro';
+import FormattedDate from './FormattedDate.astro';
+
+type Props = { essay: CollectionEntry<'essays'>; class?: string; headingLevel?: 'h2' | 'h3' };
+
+const { essay, class: className, headingLevel = 'h2' } = Astro.props;
+const { title, publishDate, description } = essay.data;
+const TitleTag = headingLevel;
+---
+
+<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/essays/${essay.id}/`}>
+    <div class="grow">
+        <TitleTag
+            class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
+        >
+            {title}
+        </TitleTag>
+        <div class="mt-1 text-sm leading-normal">
+            <FormattedDate date={publishDate} />
+        </div>
+        <!-- {description && <div class="mt-1 text-sm leading-normal">{description}</div>} -->
+    </div>
+    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
+        Read Essay <ArrowRight class="fill-current w-4 h-4" />
+    </div>
+</a>
