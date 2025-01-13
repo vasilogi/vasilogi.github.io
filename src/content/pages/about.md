@@ -8,7 +8,7 @@ seo:
     alt: A person sitting at a desk in front of a computer
 ---
 
-<!-- ![Alt text for image](/about.jpeg) -->
+![Hydra Image](/Hydra.jpg)
 
 ## Ioannis Vasilopoulos - Solutions Engineer based in Prague
 
