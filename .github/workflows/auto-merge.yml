@@ -16,27 +16,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history for all branches
-          ref: development  # Explicitly checkout development branch
+          fetch-depth: 0
 
-      - name: Create Pull Request
-        id: create-pr
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: development
-          base: main
-          delete-branch: false
-          title: 'Automated PR: Development to Main'
-          body: |
-            Automated PR created from development branch.
-            
-            Changes pushed to development branch will be merged into main.
-          labels: automated-pr
-          
-      - name: Enable Pull Request Automerge
-        if: steps.create-pr.outputs.pull-request-number
+      - name: Create and Auto-merge Pull Request
         run: |
-          gh pr merge --auto --merge "${{ steps.create-pr.outputs.pull-request-number }}"
+          # Create PR if it doesn't exist
+          PR_URL=$(gh pr create --base main --head development \
+            --title "Automated PR: Merge development into main" \
+            --body "Automated PR to merge development changes into main" \
+            --label automated-pr || \
+            gh pr list --head development --base main --json url --jq '.[0].url')
+          
+          # Enable auto-merge on the PR
+          PR_NUMBER=$(echo $PR_URL | awk -F/ '{print $NF}')
+          gh pr merge $PR_NUMBER --auto --merge
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
