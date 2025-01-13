@@ -1,4 +1,4 @@
-name: Auto PR and Merge
+name: Auto-PR from Development to Main
 
 on:
   push:
@@ -6,29 +6,24 @@ on:
       - development
 
 jobs:
-  create-and-merge-pr:
+  create-pull-request:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
       pull-requests: write
-
     steps:
-      - name: Checkout repository
+      - name: Check out current repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Create and Auto-merge Pull Request
-        run: |
-          # Create PR if it doesn't exist
-          PR_URL=$(gh pr create --base main --head development \
-            --title "Automated PR: Merge development into main" \
-            --body "Automated PR to merge development changes into main" \
-            --label automated-pr || \
-            gh pr list --head development --base main --json url --jq '.[0].url')
-          
-          # Enable auto-merge on the PR
-          PR_NUMBER=$(echo $PR_URL | awk -F/ '{print $NF}')
-          gh pr merge $PR_NUMBER --auto --merge
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main             # The branch you want to merge changes INTO
+          branch: development    # The branch you want to merge changes FROM (use 'branch' instead of 'head')
+          title: 'Sync development into main'
+          body: 'This PR was automatically created by GitHub Actions to merge dev changes into main.'
+          commit-message: 'Update from development branch'
+          delete-branch: false   # Optional: whether to delete the branch after merging
