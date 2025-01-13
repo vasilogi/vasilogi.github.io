@@ -2,6 +2,7 @@
 
 > based on [Dante](https://astro.build/themes/details/dante/)
 
+---
 A comment to pass through the merge request.
 
 ## Project Structure

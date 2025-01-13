@@ -22,8 +22,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main             # The branch you want to merge changes INTO
-          branch: development    # The branch you want to merge changes FROM (use 'branch' instead of 'head')
+          head: development    # The branch you want to merge changes FROM (use 'branch' instead of 'head')
           title: 'Sync development into main'
           body: 'This PR was automatically created by GitHub Actions to merge dev changes into main.'
           commit-message: 'Update from development branch'
+          auto-merge: true      # optional, if you want it to auto-merge upon success
           delete-branch: false   # Optional: whether to delete the branch after merging
