@@ -1,0 +1,34 @@
+name: Auto PR and Merge
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  create-and-merge-pr:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and Auto-merge Pull Request
+        run: |
+          # Create PR if it doesn't exist
+          PR_URL=$(gh pr create --base main --head development \
+            --title "Automated PR: Merge development into main" \
+            --body "Automated PR to merge development changes into main" \
+            --label automated-pr || \
+            gh pr list --head development --base main --json url --jq '.[0].url')
+          
+          # Enable auto-merge on the PR
+          PR_NUMBER=$(echo $PR_URL | awk -F/ '{print $NF}')
+          gh pr merge $PR_NUMBER --auto --merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
