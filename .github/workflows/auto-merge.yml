@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all branches
+          ref: development  # Explicitly checkout development branch
 
       - name: Create Pull Request
         id: create-pr
@@ -23,6 +26,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: development
           base: main
+          delete-branch: false
           title: 'Automated PR: Development to Main'
           body: |
             Automated PR created from development branch.
