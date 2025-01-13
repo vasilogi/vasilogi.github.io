@@ -1,10 +1,5 @@
 # @vasilogi personal blog
 
-> based on [Dante](https://astro.build/themes/details/dante/)
-
----
-A comment to pass through the merge request.
-
 ## Project Structure
 
 Inside of Dante Astro theme, you'll see the following folders and files:
@@ -54,12 +49,7 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 
 ## Credits
 
-- Demo content generate with [Chat GPT](https://chat.openai.com/)
-- Images for demo content from [Unsplash](https://unsplash.com/)
-
-## Astro Themes by Just Good UI
-
-- [Ovidius](https://github.com/JustGoodUI/ovidius-astro-theme) is a free single author blog theme.
+- Created based on [Dante](https://astro.build/themes/details/dante/)
 
 ## License
 
