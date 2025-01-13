@@ -18,13 +18,12 @@ jobs:
           fetch-depth: 0
 
       - name: Create and Auto-merge Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main             # The branch you want to merge changes INTO
-          head: development    # The branch you want to merge changes FROM (use 'branch' instead of 'head')
-          title: 'Sync development into main'
+          branch: development    # The branch you want to merge changes FROM (use 'branch' instead of 'head')
+          title: 'Merge development into main'
           body: 'This PR was automatically created by GitHub Actions to merge dev changes into main.'
           commit-message: 'Update from development branch'
-          auto-merge: true      # optional, if you want it to auto-merge upon success
           delete-branch: false   # Optional: whether to delete the branch after merging
