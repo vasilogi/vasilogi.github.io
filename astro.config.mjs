@@ -3,8 +3,8 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import rehypeMermaid from 'rehype-mermaid';
-
 import expressiveCode from 'astro-expressive-code';
+import remarkObsidianCallout from 'remark-obsidian-callout';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,5 +18,9 @@ export default defineConfig({
             excludeLangs: ['mermaid'], // Disable syntax highlighting for Mermaid
         },
         rehypePlugins: [rehypeMermaid], // Add Mermaid plugin
+        remarkPlugins: [
+            // ...
+            remarkObsidianCallout,
+          ],
     }
 });
