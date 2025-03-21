@@ -1,5 +1,5 @@
 ---
-title: The basic principles of Retrieval-Augmented Generation (RAG)
+title: The basic principles of Retrieval-Augmented Generation (RAG) - Part 1
 excerpt: A shallow hands-on dive on the fundamental components necessary for building RAG systems.
 isFeatured: true
 publishDate: 'March 25 2025'
@@ -54,6 +54,156 @@ sequenceDiagram
 
 RAG is a great method for creating Generative AI systems when fine-tuning is too expensive or due to limited computational resources or lack of labeled data, as well as when the task at hand requires a constantly up-to-date information such as news, real-time Q&A etc.[^3]
 
+## Reverse Engineering of a Simple RAG System
+
+The engineering of a simple RAG system primarily depends on how to form requests to the LLM server. [Ollama](https://ollama.com/) has been chosen for this exercise and thus we first need to examine how to form our request for this particular server. Its installation is fairly simple and the instructions can be found on their [GitHub repository](https://github.com/ollama/ollama). To verify if Ollama is running properly, visit `http://127.0.0.1:11434` or execute:
+
+```bash
+curl http://localhost:11434/api/version
+```
+
+In case of success, you should be seeing something like this in the output:
+
+```bash
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"version":"0.6.2"}
+RawContent        : HTTP/1.1 200 OK
+                    Content-Length: 19
+                    Content-Type: application/json; charset=utf-8
+                    Date: Fri, 21 Mar 2025 10:50:34 GMT
+
+                    {"version":"0.6.2"}
+Forms             : {}
+Headers           : {[Content-Length, 19], [Content-Type, application/json; charset=utf-8], [Date, Fri, 21 Mar 2025 10:50:34 GMT]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 19
+```
+
+When you make sure that the Ollama server is up and running, run the following command to install Google's open model [Gemma 3](https://ollama.com/library/gemma3:4b):
+
+```bash
+ollama pull gemma3:4b
+```
+
+Personally, I prefer to use [Postman](https://www.postman.com/) to organise and keep track of the various API requests. Moreover, for this work, I have published a short [Postman documentation](https://documenter.getpostman.com/view/21880869/2sAYkGLf4f) of the collection of API requests I've used. There, you can find how to form two API calls, one to verify that the Ollama server is running and another one to infer an LLM. Thus, following the installation of `gemma3:4b`, it's time to infer it with some query and generate a response. As you can follow in the [documentation](https://documenter.getpostman.com/view/21880869/2sAYkGLf4f), you need to send this payload:
+
+```json
+{
+    "model": "gemma3:4b",
+    "prompt": "Who created Python (programming language)?",
+    "system": "You are a Python expert who replies concisely only on Python related questions in less than 100 words text.",
+    "stream": false
+}
+```
+
+to the `http://localhost:11434/api/generate` endpoint. A successful respond will include a `"response"` value in the return payload.
+
+```json
+{
+    "model": "gemma3:4b",
+    "created_at": "2025-03-17T18:38:30.4516189Z",
+    "response": "Guido van Rossum created Python in the late 1980s. He was inspired by ABC, a previous language he worked on, and aimed for readability and a clean syntax.",
+    "done": true,
+    "done_reason": "stop",
+    "context": [
+    ],
+    "total_duration": 42026347600,
+    "load_duration": 26522853800,
+    "prompt_eval_count": 43,
+    "prompt_eval_duration": 10698000000,
+    "eval_count": 40,
+    "eval_duration": 4771000000
+}
+```
+
+Okay so far, we learned how to perform a request to the LLM server. Now, we need to create a knowledge base with fresh information about are domain-specific task.
+
+First let's design our code together. We need to create a knowledge base, we need a method that ingests the user query and checks on the knowledge base for relevant content, this method also needs another method that uses some kind of similarity measure and scores the user query to each entry of the database. Finally we need a method that augments the users input with the relevant content and sends this request to the server.
+
+### Knowledge Base
+
+collection of documents
+
+```python
+knowledge_base = [
+ "Python is a programming language created by Guido van Rossum in 1991.",
+ "Python is known for its simplicity and readability.",
+ "Python supports procedural, object-oriented, and functional programming.",
+ "The Python Package Index (PyPI) is the official repository for 3rd-party Python software.",
+ "Python uses indentation to define code blocks.",
+ "Python is used for developing web applications.",
+ "Python can be used for creating machine learning models."
+]
+```
+
+### Jaccard Similarity
+
+It is defined in general taking the ratio of two sizes (areas or volumes), the intersection size divided by the union size, also called intersection over union (IoU).[^4]
+
+$$ J(A,B) = \frac{A}{B} $$
+
+```python
+def jaccard_similarity(query: str, document: str) -> float:
+    # normalise text
+    query = set(query.lower().split(" "))
+    document = set(document.lower().split(" "))
+
+    # calculate intersection and union
+    intersection = query.intersection(document)
+    union = query.union(document)
+
+    return len(intersection)/len(union)
+```
+
+### Retrieval mechanism
+
+```python
+def retrieve(query: str, external_resources: list) -> str:
+    # score docs against query
+    similarities = [jaccard_similarity(query, doc) for doc in external_resources]
+    # get the index of the maximum similarity
+    max_index = similarities.index(max(similarities))
+    # return the top matching document
+    return external_resources[max_index]
+```
+
+### Chat completion
+
+```python
+def chat_complete(query: str, external_resources: list, system_prompt: str) -> str:
+    server_url = "http://localhost:11434/api/generate"
+    retrieved_context = retrieve(query, external_resources)
+
+    augemented_prompt = f"""Based on the following information:
+    
+    {retrieved_context}
+
+    provide an answer to the following question:
+
+    {query}
+    """
+
+    payload = {
+    "model": "gemma3:4b",
+    "prompt": augemented_prompt,
+    "system": system_prompt,
+    "stream": False
+    }
+
+    headers = {
+    'Content-Type': 'application/json'
+    }
+
+    response = requests.request("POST", server_url, headers=headers, json=payload, timeout=180)
+    response = response.json()
+
+    return response.get("response", None)
+```
+
 ## References
 
 [^1]: <https://www.acorn.io/resources/learning-center/fine-tuning-llm/>
@@ -61,3 +211,5 @@ RAG is a great method for creating Generative AI systems when fine-tuning is too
 [^2]: <https://arxiv.org/html/2408.13296v1#Ch1.S5>
 
 [^3]: <https://learn.microsoft.com/en-us/azure/developer/ai/augment-llm-rag-fine-tuning>
+
+[^4]: <https://en.wikipedia.org/wiki/Jaccard_index>
