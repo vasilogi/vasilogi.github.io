@@ -17,7 +17,7 @@
         "editor.tabSize": 2
     },
     "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.tabSize": 2
     },
     "typescript.tsdk": "node_modules/typescript/lib",
