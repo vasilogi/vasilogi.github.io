@@ -30,9 +30,7 @@ You can find Ollama-compatible models in their [library](https://ollama.com/sear
 ollama pull llama3:8b
 ```
 
-> Choose models based on your machine's specifications. I prefer using smaller models since my development environment has a graphics card that isn't compatible with Ollama (as of the current version).
-
-> You can find a list of Ollama-compatible GPUs [here](https://github.com/ollama/ollama/blob/main/docs/gpu.md).
+Choose models based on your machine's specifications. I prefer using smaller models since my development environment has a graphics card that isn't compatible with Ollama (as of the current version). Additionally, if you would like to utilise GPU resources, you can find a list of Ollama-compatible GPUs [here](https://github.com/ollama/ollama/blob/main/docs/gpu.md).
 
 While you can interact directly with installed models using the CLI, [Open WebUI](https://github.com/open-webui/open-webui) offers a more user-friendly alternative with many more capabilities. Their [documentation](https://docs.openwebui.com/) provides detailed information on getting started. The recommended method is to run Open WebUI using Docker. The default Docker command is:
 
@@ -40,13 +38,14 @@ While you can interact directly with installed models using the CLI, [Open WebUI
 docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
 
-> [Server Connectivity Issues](https://docs.openwebui.com/troubleshooting/connection-error) are common with Open WebUI. In my case, port 3000 was already in use by another service, so I had to change it to 3030.
+Keep in mind that:
 
-> Both Ollama and Open WebUI are rapidly evolving technologies. To avoid potential compatibility issues, it's recommended to use a specific version of Open WebUI rather than the latest one.
-
+- [Server Connectivity Issues](https://docs.openwebui.com/troubleshooting/connection-error) are common with Open WebUI. In my case, port 3000 was already in use by another service, so I had to change it to 3030.
+- [Server Connectivity Issues](https://docs.openwebui.com/troubleshooting/connection-error) are common with Open WebUI. In my case, port 3000 was already in use by another service, so I had to change it to 3030.
+- Both Ollama and Open WebUI are rapidly evolving technologies. To avoid potential compatibility issues, it's recommended to use a specific version of Open WebUI rather than the latest one.
 For easier solution maintenance, consider using `docker-compose`. The recommended Docker run command, mentioned above, can be converted to this docker-compose configuration:
 
-```YAML
+```yaml
 services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:v0.4.8

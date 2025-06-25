@@ -35,7 +35,7 @@ ollama show llava:7b --modelfile
 
 Copy its contents and add your custom system message. The [complete Modelfile](https://github.com/vasilogi/eshop-product-descriptions/blob/main/Modelfile) for this use case is available on my GitHub. This approach allows you to track improvements to your Modelfile and system message as you optimize the model's performance.
 
-> Using a Modelfile instead of Open WebUI customization is preferable because Ollama serves as the actual model server, which becomes important when extending your solution, such as implementing batch requests to the Ollama API.
+Using a Modelfile instead of Open WebUI customization is preferable because Ollama serves as the actual model server, which becomes important when extending your solution, such as implementing batch requests to the Ollama API.
 
 To create your new model using the Modelfile, run:
 

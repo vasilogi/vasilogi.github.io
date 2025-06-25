@@ -89,7 +89,7 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         // title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm Ioannis (Giannis) Vasilopoulos, a Solutions Engineer based in Prague with a strong background in software development, AI, technical sales, and solution architecture. I specialize in integrating AI models and solutions into customer environments while maintaining a focus on the big picture. I find motivation in understanding customer needs, fostering effective communication, and building cross-departmental collaborations. Passionate about continuous learning and knowledge sharing, I enjoy staying curious and contributing to both personal and team growth.",
+        text: "I'm Ioannis (Giannis) Vasilopoulos, a Machine Learning Engineer based in Prague with a deep background in software development and AI/ML systems. I specialize in architecting, developing and operationalizing robust machine learning solutions, bridging the gap between model development and production deployment.",
         // image: {
         //     src: '/hero.jpeg',
         //     alt: 'A person sitting at a desk in front of a computer'
