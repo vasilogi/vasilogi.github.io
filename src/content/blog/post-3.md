@@ -52,8 +52,6 @@ It’s important to acknowledge that this approach isn’t without its challenge
 
 Despite these considerations, for those with the technical inclination or the willingness to learn, building your own IoT monitoring solution can be a rewarding endeavor. It offers a perfect balance of cost, control, and educational value, making it an attractive option for a wide range of IoT applications.
 
-![pros_n_cons](/iot_post_pros-n-cons.svg)
-
 ## Alternative Solutions
 
 While building your own IoT monitoring solution offers unique advantages, it’s important to consider other options that might better suit your specific needs or technical expertise. The IoT landscape offers a range of alternatives, from robust open-source platforms to comprehensive commercial solutions.
