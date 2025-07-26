@@ -133,6 +133,7 @@ First let's design our code together. We need to create a knowledge base, we nee
 
 ### Knowledge Base
 
+
 PAUSED HERE
 
 A knowledge base would usually consist of collection of documents. For this exersice we assume that each document is represented by a string:
