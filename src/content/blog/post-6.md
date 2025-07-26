@@ -6,7 +6,6 @@ publishDate: 'March 25 2025'
 tags:
   - LLM
   - AI
-layout: '../../layouts/BaseLayout.astro'
 ---
 
 ## Prerequisites
@@ -133,6 +132,8 @@ Okay so far, we learned how to perform a request to the LLM server. Now, we need
 First let's design our code together. We need to create a knowledge base, we need a method that ingests the user query and checks on the knowledge base for relevant content, this method also needs another method that uses some kind of similarity measure and scores the user query to each entry of the database. Finally we need a method that augments the users input with the relevant content and sends this request to the server.
 
 ### Knowledge Base
+
+PAUSED HERE
 
 A knowledge base would usually consist of collection of documents. For this exersice we assume that each document is represented by a string:
 
